@@ -78,25 +78,62 @@ function App(){
     setResult(res);
     setResultHistory((prev) => [res, ...prev]);
   };
+   const getHighlightedText = () => {
+    return text.split("").map((char, idx) => {
+      let typedChar = input[idx];
+      let className = "";
+      if (typedChar === undefined) className = "";
+      else if (typedChar === char) className = "correct";
+      else className = "incorrect";
 
+      return (
+        <span key={idx} className={className}>{char}</span>
+      );
+    });
+  };
 
- 
-   return (
+  return (
    <>
   
- <h1> Typing Speed Tester</h1>
+ <h1> 💻 Typing Speed Tester</h1>
     <div className='container'>
       
       <p className='timer'>Time Left : {timer}s</p>
 
-      
-       
-        
-    
+      <div className='box'>
+        <p className='quote'>
+          {getHighlightedText()}
+        </p>
+        <textarea ref={inputRef} className='input' placeholder='Start typing here...' value={input} onChange={handleChange} disabled={result || timer === 0} />
+        {result ? (
+          <div className='result'>
+            <p>Speed : {result.speed} WPM</p>
+            <p>Accuracy : {result.accuracy}%</p>
+            <p>Time Taken : {result.time} seconds</p>
+            <button onClick={resetTest}>Try Again</button>
+          </div>
+        ) : (
+          <p className='instruction'> Type the above sentence to test your speed.</p>
+        )}
+      </div>
+
+      {resultHistory.length > 0 && (
+        <div className='History'>
+          <h3>Past Result</h3>
+          <ul>
+            {resultHistory.map((r,i)=>(
+              <li key={i}>
+                <b>{i+1}.</b> Speed : {r.speed} WPM | Accuracy : {r.accuracy}% | Time : {r.time}s
+              </li>
+            ))}
+          </ul>
+        </div>
+      )} 
     </div>
     </>
   )
 }
 
 export default App
+
 
