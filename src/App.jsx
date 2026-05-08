@@ -62,6 +62,24 @@ function App(){
     }
   }
 
+  const calculateResult = (start, end, isTimeout = false) => {
+    const timeTaken = (end - start) / 1000;
+    const words = text.trim().split(" ").length;
+    const speed = Math.round((words / timeTaken) * 60);
+    const correctChars = input.split("").filter((ch, i) => ch === text[i]).length;
+    const accuracy = Math.round((correctChars / text.length) * 100);
+
+    const res = {
+      speed: isTimeout ? 0 : speed,
+      accuracy,
+      time: isTimeout ? 60 : timeTaken.toFixed(2),
+    };
+
+    setResult(res);
+    setResultHistory((prev) => [res, ...prev]);
+  };
+
+
  
    return (
    <>
