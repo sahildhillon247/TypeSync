@@ -46,6 +46,22 @@ function App(){
     setTimer(60);
     inputRef.current.focus();
   }
+
+    const handleChange = (e) => {
+    const val = e.target.value;
+    setInput(val);
+
+    if (!startTime && val.length > 0) {
+      const now = new Date();
+      setStartTime(now);
+    }
+    if (val === text) {
+      const end = new Date();
+      setEndTime(end);
+      calculateResult(startTime, end)
+    }
+  }
+
  
    return (
    <>
