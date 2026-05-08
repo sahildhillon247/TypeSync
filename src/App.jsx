@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 const sentences = [
@@ -17,6 +18,23 @@ function App(){
   const [timer, setTimer] = useState(60);
 
   const inputRef = useRef(null); //ye input 
+
+   useEffect(() => {
+    resetTest();
+  }, []);
+
+  useEffect(() => {
+    let interval;
+    if (startTime && !endTime && timer > 0) {
+      interval = setInterval(() => {
+        setTimer((prev) => prev - 1);
+      }, 1000);
+    }
+    if (timer === 0 && !result) {
+      calculateResult(startTime, new Date(), true);
+    }
+    return () => clearInterval(interval);
+  }, [startTime, timer, endTime, result])
   
 
   const resetTest = () => {
@@ -28,6 +46,23 @@ function App(){
     setTimer(60);
     inputRef.current.focus();
   }
+ 
+   return (
+   <>
+  
+ <h1> Typing Speed Tester</h1>
+    <div className='container'>
+      
+      <p className='timer'>Time Left : {timer}s</p>
+
+      
+       
+        
+    
+    </div>
+    </>
+  )
 }
 
 export default App
+
