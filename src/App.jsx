@@ -76,7 +76,8 @@ function App(){
     const accuracy = Math.round((correctChars / text.length) * 100);
 
     const res = {
-      speed: isTimeout ? 0 : speed,
+      // speed: isTimeout ? 0 : speed,
+      speed,
       accuracy,
       time: isTimeout ? 60 : timeTaken.toFixed(2),
     };
