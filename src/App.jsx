@@ -2,11 +2,16 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 
 const sentences = [
-  "aaaaaaaa",
-  "sssssss",
-  "erfdfegege",
-  "wrthgeqrgerg"
-]
+  "Neela peela dabba upar neeche karoge to internship to lag hi jayegi.",
+  "Ek div ke andar dusra div daalne se frontend developer nahi ban jaate.",
+  "Console.log is still the most trusted debugging partner for beginners.",
+  "Code compile hone se zyada important hai Rahul sir ka 'good' bol dena.",
+  "Rahul sir always motivates students to focus on building real world projects.",
+  "Code chal gaya to developer khush, samajh aa gaya to teacher khush.",
+  "Rahul sir explains difficult concepts with simple real life examples.",
+  "Typing speed fast ho sakti hai lekin viva ke answers fir bhi slow hi aate hain.",
+  "Rahul sir encourages students to learn through practice instead of rote learning."
+];
 
 function App(){
   const [text, setText] = useState("");
