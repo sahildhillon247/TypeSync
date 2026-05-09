@@ -43,6 +43,7 @@ function App(){
     setInput("");
     setStartTime(null);
     setEndTime(null);
+    setResult(null);
     setTimer(60);
     inputRef.current.focus();
   }
