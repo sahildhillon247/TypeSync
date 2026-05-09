@@ -1,7 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 *{
-  background-color: pink;
-  color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-/* #result{
-  color: black;
-} */
+
+body{
+    background-color: #0f172a;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container{
+    width: 700px;
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 20px;
+    border: 4px solid #38bdf8;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+
+.timer{
+    color: #cbd5e1;
+    margin-bottom: 15px;
+    font-size: 17px;
+}
+
+.box{
+    background-color: #334155;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.quote{
+    background-color: #0f172a;
+    color: white;
+    font-size: 28px;
+    padding: 15px;
+    border-radius: 10px;
+    line-height: 1.5;
+    min-height: 60px;
+    margin-bottom: 15px;
+}
+
+.correct{
+    color: limegreen;
+}
+
+.incorrect{
+    color: red;
+}
+
+.input{
+    width: 100%;
+    height: 100px;
+    border: 3px solid #64748b;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    resize: none;
+    background-color: #1e293b;
+    color: white;
+}
+
+.input:focus{
+    outline: none;
+    border-color: #38bdf8;
+}
+
+.result{
+    margin-top: 10px;
+    color: white;
+}
+
+.result p{
+    margin-top: 8px;
+    font-size: 20px;
+}
+
+.result button{
+    margin-top: 12px;
+    width: 200px;
+    height: 42px;
+    border: none;
+    border-radius: 10px;
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.result button:hover{
+    background-color: #0ea5e9;
+}
+
+.instruction{
+    background-color: #475569;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.History{
+    background-color: #334155;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+}
+
+.History h3{
+    margin-bottom: 10px;
+    color: #38bdf8;
+}
